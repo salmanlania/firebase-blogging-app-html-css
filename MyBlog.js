@@ -63,6 +63,13 @@ const getNotes = async () => {
                     `
             }
         }
+        else {
+    posts.innerHTML += `
+    <div class="alert alert-primary d-flex justify-content-between" role="alert">
+        <span>No Blogs Available</span>
+    </div>
+    `
+}
 
         // return 
     });
