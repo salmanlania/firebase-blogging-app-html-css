@@ -1,4 +1,4 @@
-import { signOut, auth, db, doc, deleteDoc, collection, addDoc, getDocs , getDoc, updateDoc } from './Firebase.js'
+import { signOut, auth, db, doc, deleteDoc, collection, addDoc, getDocs, getDoc, updateDoc } from './Firebase.js'
 const dropdownDiv = document.querySelector('#dropdown-div');
 const dropdownDivLogout = document.querySelector('#dropdown-div-logout');
 const pvtBlogs = document.querySelector('#pvtBlogs');
@@ -38,7 +38,7 @@ const getNotes = async () => {
         console.log(`${doc.id} => ${(doc.data().note)}`);
         const privacyCheck = doc.data().notePrivacy;
         const id = doc.id
-        console.log('id' , id)
+        console.log('id', id)
         console.log('privacyCheck', privacyCheck)
         if (!uid) {
             console.log(false)
@@ -63,34 +63,31 @@ const getNotes = async () => {
                     `
             }
         }
-}
-
-        // return 
-    });
+    })
 }
 
 const edit = async (id) => {
-    console.log('edit' , id)
+    console.log('edit', id)
     try {
-        const getBlog = await getDoc(doc(db , "todosData" , id))
-        console.log('getBlog' , getBlog.data().note )
+        const getBlog = await getDoc(doc(db, "todosData", id))
+        console.log('getBlog', getBlog.data().note)
 
-        const newNote = prompt('Enter Your New Note' , getBlog.data().note)
-        console.log('newNote' , newNote)
+        const newNote = prompt('Enter Your New Note', getBlog.data().note)
+        console.log('newNote', newNote)
 
-        await updateDoc(doc(db, "todosData" , id),{
+        await updateDoc(doc(db, "todosData", id), {
             note: newNote
         })
         alert("Post updated successfully!");
         getNotes();
     } catch (error) {
-        
+
     }
 }
 
-const deleteBtn = async(del) => {
-    console.log('del' , del)
-    await deleteDoc(doc(db , "todosData" , del))
+const deleteBtn = async (del) => {
+    console.log('del', del)
+    await deleteDoc(doc(db, "todosData", del))
     getNotes();
     alert("delete successfully")
 }
