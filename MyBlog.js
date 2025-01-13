@@ -13,7 +13,7 @@ const uid = localStorage.getItem('uid');
     if (!uid) {
         dropdownDivLogout.style.display = 'none'
         dropdownDiv.style.display = 'block'
-        pvtBlogs.style.display = 'none'
+        // pvtBlogs.style.display = 'none'
         console.log('You are not logged in. Redirecting to login page...');
         // alert('You are not logged in. Redirecting to login page...');
         // window.location.href = "../index.html";
@@ -22,7 +22,7 @@ const uid = localStorage.getItem('uid');
     } else {
         dropdownDivLogout.style.display = 'block'
         dropdownDiv.style.display = 'none'
-        pvtBlogs.style.display = 'block'
+        // pvtBlogs.style.display = 'block'
         // loadingScreen.style.display = 'none';
         // app.style.display = 'block';
         console.log('User is logged in');
