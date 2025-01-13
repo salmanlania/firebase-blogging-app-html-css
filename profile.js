@@ -160,5 +160,5 @@ const dobEdit =async (uid) => {
 
 window.getUsers = getUsers
 window.fullNameEdit = fullNameEdit
-// window.emailEdit = emailEdit
+window.logoutHandler = logoutHandler
 window.dobEdit = dobEdit
