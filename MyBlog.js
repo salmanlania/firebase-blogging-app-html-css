@@ -1,7 +1,7 @@
 import { signOut, auth, db, doc, deleteDoc, collection, addDoc, getDocs, getDoc, updateDoc } from './Firebase.js'
 const dropdownDiv = document.querySelector('#dropdown-div');
 const dropdownDivLogout = document.querySelector('#dropdown-div-logout');
-const pvtBlogs = document.querySelector('#pvtBlogs');
+// const pvtBlogs = document.querySelector('#pvtBlogs');
 let privacySelect = document.querySelector('#notePrivacy');
 
 const uid = localStorage.getItem('uid');
@@ -103,7 +103,7 @@ const logoutHandler = async (e) => {
         alert('Logout Succesfull')
         getNotes()
         dropdownDivLogout.style.display = 'none'
-        pvtBlogs.style.display = 'none'
+        // pvtBlogs.style.display = 'none'
         dropdownDiv.style.display = 'block'
         localStorage.removeItem('uid')
         // window.location.href = "../index.html"
