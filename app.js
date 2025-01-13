@@ -37,6 +37,7 @@ const logoutHandler = async (e) => {
 
         // if (logout) {
         alert('Logout Succesfull')
+        getNotes()
         dropdownDivLogout.style.display = 'none'
         pvtBlogs.style.display = 'none'
         dropdownDiv.style.display = 'block'
