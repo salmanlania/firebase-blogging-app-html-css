@@ -27,6 +27,33 @@ const uid = localStorage.getItem('uid');
     }
 })();
 
+const logoutHandler = async (e) => {
+    e.preventDefault();
+    // return console.log('logout')
+    try {
+        const logout = await signOut(auth)
+        console.log('logout', logout)
+
+        // if (logout) {
+        alert('Logout Succesfull')
+        dropdownDivLogout.style.display = 'none'
+        pvtBlogs.style.display = 'none'
+        dropdownDiv.style.display = 'block'
+        localStorage.removeItem('uid')
+        window.location.replace("./index.html");
+        // window.location.href = "../index.html"
+        // }
+        // else if (!logout) {
+        //     localStorage.removeItem('uid')
+        //     // window.location.href = "../index.html"
+        // }
+        // console.log('signOut' , signOut)
+    } catch (error) {
+        console.log('error', error.message)
+        alert(error.code)
+    }
+}
+
 const getUsers = async () => {
     const querySnapshot = await getDoc(doc(db, "usersData", uid));
     parentDiv.innerHTML = ''
