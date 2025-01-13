@@ -37,7 +37,7 @@ const logoutHandler = async (e) => {
         // if (logout) {
         alert('Logout Succesfull')
         dropdownDivLogout.style.display = 'none'
-        pvtBlogs.style.display = 'none'
+        // pvtBlogs.style.display = 'none'
         dropdownDiv.style.display = 'block'
         localStorage.removeItem('uid')
         window.location.replace("./index.html");
